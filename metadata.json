@@ -1,0 +1,7 @@
+{
+  "name": "Godrej Properties Mumbai mqps",
+  "description": "An application to explore Godrej Properties projects in Mumbai, featuring details, ratings, and user comment sentiment analysis, grounded with Google Maps data.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
