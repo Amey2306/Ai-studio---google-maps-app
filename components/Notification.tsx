@@ -25,23 +25,25 @@ const Notification: React.FC<NotificationProps> = ({ message, onClose }) => {
 
   return (
     <div
-      className={`fixed top-5 right-5 w-full max-w-sm bg-white shadow-lg rounded-lg pointer-events-auto ring-1 ring-black ring-opacity-5 overflow-hidden transition-transform duration-300 ease-in-out ${visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
+      // FIX: Removed fixed positioning to allow stacking and updated to dark theme.
+      className={`w-full max-w-sm bg-slate-800 shadow-lg rounded-lg pointer-events-auto ring-1 ring-white/10 overflow-hidden transition-transform duration-300 ease-in-out ${visible ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'}`}
     >
       <div className="p-4">
         <div className="flex items-start">
           <div className="flex-shrink-0">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-500" viewBox="0 0 20 20" fill="currentColor">
-                <path fillRule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clipRule="evenodd" />
+            {/* FIX: Replaced icon with a more appropriate alert icon. */}
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-red-400" viewBox="0 0 20 20" fill="currentColor">
+              <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
             </svg>
           </div>
           <div className="ml-3 w-0 flex-1 pt-0.5">
-            <p className="text-sm font-medium text-gray-900">Low Rating Alert!</p>
-            <p className="mt-1 text-sm text-gray-500">{message}</p>
+            <p className="text-sm font-medium text-slate-100">Low Rating Alert!</p>
+            <p className="mt-1 text-sm text-slate-400">{message}</p>
           </div>
           <div className="ml-4 flex-shrink-0 flex">
             <button
               onClick={handleClose}
-              className="bg-white rounded-md inline-flex text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500"
+              className="bg-slate-800 rounded-md inline-flex text-slate-400 hover:text-slate-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-slate-800 focus:ring-sky-500"
             >
               <span className="sr-only">Close</span>
               <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">

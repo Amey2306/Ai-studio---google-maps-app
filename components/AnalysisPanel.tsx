@@ -13,15 +13,16 @@ interface AnalysisPanelProps {
 
 const AnalysisPanel: React.FC<AnalysisPanelProps> = ({ analysis, loading }) => {
   return (
-    <div className="bg-white rounded-xl shadow-lg p-6 mt-12">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">AI-Powered Analysis</h2>
+    // FIX: Updated styling to match the application's dark theme.
+    <div className="bg-slate-800/50 rounded-lg shadow-lg p-6 mt-12 ring-1 ring-white/10">
+      <h2 className="text-2xl font-bold text-sky-300 mb-4">AI-Powered Analysis</h2>
       {loading ? (
-        <div className="text-center text-gray-500">
+        <div className="text-center text-slate-400">
             <p>Analyzing data...</p>
         </div>
       ) : (
         <div 
-          className="text-gray-700 space-y-3 prose" 
+          className="text-slate-300 space-y-3" 
           dangerouslySetInnerHTML={{ __html: basicMarkdownToHtml(analysis) }} 
         />
       )}
